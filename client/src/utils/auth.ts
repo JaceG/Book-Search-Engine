@@ -7,6 +7,7 @@ interface UserToken {
 		email: string;
 		_id: string;
 	};
+	exp: number;
 }
 
 // create a new class to instantiate for a user
