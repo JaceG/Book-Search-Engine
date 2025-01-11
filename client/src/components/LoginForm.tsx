@@ -38,7 +38,10 @@ const LoginForm = ({}: { handleModalClose: () => void }) => {
 
 		try {
 			const { data } = await login({
-				variables: { ...userFormData },
+				variables: {
+					email: userFormData.email,
+					password: userFormData.password,
+				},
 			});
 
 			Auth.login(data.login.token);

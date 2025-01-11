@@ -11,7 +11,10 @@ import Navbar from './components/Navbar';
 
 // Set up where our app will talk to the server
 const httpLink = createHttpLink({
-	uri: '/graphql',
+	uri:
+		process.env.NODE_ENV === 'production'
+			? '/graphql'
+			: 'http://localhost:3001/graphql',
 });
 
 // This adds our login token to every request

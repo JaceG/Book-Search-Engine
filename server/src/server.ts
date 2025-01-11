@@ -31,11 +31,14 @@ await server.start();
 app.use(
 	'/graphql',
 	cors({
-		origin: 'http://localhost:3000', // Allow requests from our React app
-		credentials: true, // Allow sending cookies
+		origin:
+			process.env.NODE_ENV === 'production'
+				? true // Allow any origin in production
+				: 'http://localhost:5173', // Allow Vite dev server in development
+		credentials: true,
 	}),
 	expressMiddleware(server, {
-		context: authMiddleware, // Check if user is logged in
+		context: authMiddleware,
 	})
 );
 
