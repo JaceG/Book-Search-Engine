@@ -33,7 +33,7 @@ For any questions, please contact me:
 - GitHub: [JaceG](https://github.com/JaceG)
 - Email: jace.galloway@gmail.com
 
-## Screenshots
-[Add your screenshots here]
+## Walkthrough Video
+[Link to Video Demonstration](https://drive.google.com/file/d/1wfy9LIei7LLZEbLzhYdJ4GDWej5TasXc/view?usp=sharing)
 
 
