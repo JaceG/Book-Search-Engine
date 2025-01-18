@@ -29,12 +29,20 @@ const resolvers = {
 				password,
 			}: { username: string; email: string; password: string }
 		) => {
-			// Make new user in database
-			const user = await User.create({ username, email, password });
-			// Create login token
-			const token = signToken(user.username, user.email, user._id);
-			// Return both token and user info
-			return { token, user };
+			try {
+				console.log('Starting user creation with:', {
+					username,
+					email,
+				});
+				const user = await User.create({ username, email, password });
+				console.log('User created successfully:', user);
+				const token = signToken(user.username, user.email, user._id);
+				console.log('Token generated:', token);
+				return { token, user };
+			} catch (err: any) {
+				console.error('Error in addUser:', err);
+				throw new GraphQLError(err.message);
+			}
 		},
 
 		// Log in existing user

@@ -6,7 +6,6 @@ import bookSchema from './Book.js';
 import type { BookDocument } from './Book.js';
 
 export interface UserDocument extends Document {
-	id: string;
 	username: string;
 	email: string;
 	password: string;
@@ -40,6 +39,8 @@ const userSchema = new Schema<UserDocument>(
 		toJSON: {
 			virtuals: true,
 		},
+		// Add this to prevent Mongoose from adding fields
+		strict: true,
 	}
 );
 
