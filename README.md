@@ -36,4 +36,7 @@ For any questions, please contact me:
 ## Walkthrough Video
 [Link to Video Demonstration](https://drive.google.com/file/d/1wfy9LIei7LLZEbLzhYdJ4GDWej5TasXc/view?usp=sharing)
 
+## Screenshots
+![Book Search Engine Screenshot](./client/public/Book-Search-Engine-Screenshot.jpg)
+
 
